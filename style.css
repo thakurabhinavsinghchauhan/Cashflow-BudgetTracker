@@ -1,0 +1,98 @@
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: #f0f2f5;
+    display: flex;
+    justify-content: center;
+}
+
+main {
+    background: white;
+    padding: 2rem;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+    max-width: 500px;
+}
+
+.input-group {
+    margin-bottom: 1.5rem;
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    gap: 20px;
+}
+.left, .right {
+    display: flex;
+    flex-direction: column;
+}
+
+
+input, select {
+    padding: 10px;
+    margin: 5px 0;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    font-size: 1rem;
+}
+
+button {
+    width: 100%;
+    padding: 12px;
+    border: none;
+    border-radius: 8px;
+    background: rgb(102, 102, 246);
+    color: white;
+    font-weight: bold;
+    transition: background 0.3s;
+    cursor: pointer;
+}
+
+button:hover {
+    filter: brightness(90%);
+}
+
+.balance-card {
+    text-align: center;
+    background: #f8fafc;
+}
+
+.warning {
+    color: red !important; /* Danger Red */
+    animation: shake 0.5s ease-in-out;
+}
+
+.alert-text {
+    color: red; /* Danger Red */
+    font-weight: bold;
+    font-size: 0.9rem;
+}
+
+.expense-item {
+    display: flex;
+    justify-content: space-between;
+    padding: 12px;
+    border-bottom: 1px solid #edf2f7;
+    align-items: center;
+}
+
+.delete-btn {
+    background: transparent;
+    color: red; /* Danger Red */
+    width: auto;
+    font-size: 1.2rem;
+    padding: 5px;
+}
+
+#chartContainer {
+    margin: 10px auto;
+    max-height: 250px;
+}
+
+.pdf-btn {
+    background: lightslategrey; /* Dark Navy */
+    margin-top: 15px;
+}
+
+@keyframes shake {
+    0%, 100% { transform: translateX(0); }
+    25% { transform: translateX(-5px); }
+    75% { transform: translateX(5px); }
+}

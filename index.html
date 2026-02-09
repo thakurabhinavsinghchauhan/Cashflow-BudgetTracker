@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cash Flow Budget Tracker</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+</head>
+
+<body>
+
+    <main>
+        <h2>Cash Flow Budget Tracker</h2>
+
+        <div class="input-group">
+            <div class="left">
+                <select id="currencySelector" onchange="convertCurrency()">
+                    <option value="USD">USD ($)</option>
+                    <option value="INR">INR (₹)</option>
+                    <option value="EUR">EUR (€)</option>
+                </select>
+                <input type="number" id="salaryInput" placeholder="Enter Total Salary" oninput="updateSalary()">
+            </div>
+            <div class="right">
+                <input type="text" id="expName" placeholder="Expense Name">
+                <input type="number" id="expAmount" placeholder="Amount">
+            </div>
+        </div>
+        <button id="addBtn" onclick="addExpense()">Add Expense</button>
+
+
+        <div class="balance-card">
+            <h3>Remaining Balance: <span id="balanceDisplay">$0</span></h3>
+            <p id="alertMsg" class="alert-text" style="display:none;">⚠️ Budget Low! (Below 10%)</p>
+        </div>
+
+        <div id="chartContainer">
+            <canvas id="budgetChart"></canvas>
+        </div>
+
+        <ul id="expenseList"></ul>
+
+        <button onclick="downloadPDF()" class="pdf-btn">Download Report (PDF)</button>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
